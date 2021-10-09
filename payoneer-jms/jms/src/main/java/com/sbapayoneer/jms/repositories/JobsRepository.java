@@ -18,5 +18,5 @@ public interface JobsRepository extends CrudRepository<Job, Object>{
 	@Modifying
 	@Transactional
 	@Query("update Job u set u.status = :status where u.id = :id")
-	void updateStatus(@Param(value = "id") int id, @Param(value = "status") String status);
+	void updateStatus(@Param(value = "id") Long id, @Param(value = "status") String status);
  }

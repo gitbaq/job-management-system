@@ -1,4 +1,4 @@
-package com.sbapayoneer.jms.scheduler;
+package com.sbapayoneer.jms.services;
 
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -16,22 +16,22 @@ import com.sbapayoneer.jms.model.Job;
 import com.sbapayoneer.jms.repositories.JobsRepository;
 
 @Component
-public class TasksScheduler {
+public class TasksSchedulerService {
 	@Value( "${spring.datasource.username}" )
 	private String loggedInUSer;
 	
-	private static final Logger log = LoggerFactory.getLogger(TasksScheduler.class);
+	private static final Logger log = LoggerFactory.getLogger(TasksSchedulerService.class);
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("MMDDYYYY HH:mm:ss");
 	
 	@Autowired
 	  private JobsRepository repository;
 	
 	@Scheduled(fixedRate = Constants.QUEUE_ADD_TIMER)
-	public void reportCurrentTime() {
+	public void addNewJobs() {
 		Job job = new Job();
 		job.setJobName("Job@" +dateFormat.format(new Date(new java.util.Date().getTime())));
 		job.setJobDesc(job.getJobName());
-			job.setAdd_dt(new Timestamp(System.currentTimeMillis()));
+			job.setAddDt(new Timestamp(System.currentTimeMillis()));
 			job.setReqDt(new Timestamp(System.currentTimeMillis()));
 			job.setAddCd(loggedInUSer);
 			

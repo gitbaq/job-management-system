@@ -1,4 +1,4 @@
-package com.sbapayoneer.jms.scheduler;
+package com.sbapayoneer.jms.services;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,16 +21,16 @@ import reactor.core.publisher.Mono;
 
 
 @Component
-public class ScheduledTasksProcessingManager {
+public class TasksProcessingService {
 
-	private static final Logger log = LoggerFactory.getLogger(ScheduledTasksProcessingManager.class);
+	private static final Logger log = LoggerFactory.getLogger(TasksProcessingService.class);
 
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 	@Autowired
 	  private JobsRepository repository;
 
 	@Scheduled(fixedRate = Constants.QUEUE_TIMER)
-	public void reportCurrentTime() {
+	public void processJob() {
 		List<Job> jobsList = repository.findByStatus(Constants.STATUS_QUEUED);
 	if(jobsList.iterator().hasNext()) 
 	{
@@ -39,7 +39,7 @@ public class ScheduledTasksProcessingManager {
 			log.info("<"+ dateFormat.format(new Date())+"> Running job: "+ job.getJobName());
 			repository.updateStatus(job.getId(), Constants.STATUS_RUNNING);
 			Mono<Job> processedJob = client.post()
-					  .uri("/jobs/process/{id}", job.getId())
+					  .uri("/jobs/v1/process/{id}", job.getId())
 					  .retrieve()
 					  .bodyToMono(Job.class);
 			
