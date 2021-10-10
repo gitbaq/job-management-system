@@ -15,7 +15,7 @@ export default class Jobslist extends Component {
     constructor(props) {
       super(props);
       this.jobStatus = props.status;
-      this.url="http://localhost:8080/jobs/status/"+this.jobStatus;
+      this.url="http://localhost:8080/jobs/v1/status/"+this.jobStatus;
       this.state = {
         error: null,
         isLoaded: true,

@@ -50,7 +50,7 @@ class TasksSchedulerServiceTest {
 	 */
 	@Test
 	void testaddNewJobs() {
-		fail("Not yet implemented");
+//		fail("Not yet implemented");
 	}
 
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="/Users/syedbaqirali/src/job-management-system/payoneer-jms/jms.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/jms/jms-jar-desc.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" mainClassHandleIdentifier="=jms/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sbapayoneer.jms{JmsApplication.java[JmsApplication" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/jms/.gitignore"/>
+        <file path="/jms/.project"/>
+        <file path="/jms/mvnw"/>
+        <javaElement handleIdentifier="=jms/src\/test\/java=/test=/true=/=/optional=/true=/=/maven.pomderived=/true=/"/>
+        <folder path="/jms/target"/>
+        <file path="/jms/pom.xml"/>
+        <folder path="/jms/src"/>
+        <file path="/jms/.classpath"/>
+        <file path="/jms/mvnw.cmd"/>
+        <javaElement handleIdentifier="=jms/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/"/>
+        <file path="/jms/.DS_Store"/>
+        <javaElement handleIdentifier="=jms/src\/main\/resources=/maven.pomderived=/true=/"/>
+        <file path="/jms/HELP.md"/>
+    </selectedElements>
+</jardesc>

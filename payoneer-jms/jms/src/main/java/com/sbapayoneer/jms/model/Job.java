@@ -17,7 +17,6 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@NoArgsConstructor
 @Entity
 @Table(name = "JMS_JOBS")
 public class Job {
@@ -44,9 +43,11 @@ public class Job {
         this.status = status;
     }
 
+
 	public Job() {
 		// TODO Auto-generated constructor stub
 	}
+
 
 	/**
 	 * @return the id

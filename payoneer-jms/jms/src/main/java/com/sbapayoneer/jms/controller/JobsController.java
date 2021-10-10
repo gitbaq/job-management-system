@@ -1,6 +1,7 @@
 package com.sbapayoneer.jms.controller;
 
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Optional;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -29,6 +30,11 @@ public class JobsController {
 	@GetMapping("/{id}")
 	private Optional<Job> getJobsById(@PathVariable Long id) {
 	    return jobsRepository.findById(id);
+	}
+	
+	@GetMapping("/status/{status}")
+	private List<Job> getJobsByStatus(@PathVariable String status) {
+	    return jobsRepository.findByStatus(status);
 	}
 	
 	@PostMapping("/process/{id}")
