@@ -18,6 +18,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
 @Table(name = "JMS_JOBS")
 public class Job {
 	

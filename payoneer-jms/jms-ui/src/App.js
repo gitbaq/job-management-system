@@ -13,7 +13,7 @@ function App() {
       {/* <header className="App-header"> */}
       <header>
       <Header/>
-      <Note header="Jobs Queue" content="Queued" img="queue.png" status="Q"/>
+      <Note header="Jobs Queued" content="Queued 2" img="queue.png" status="Q"/>
       <Note header="Jobs Running" content="Running" img="running.png" status="R"/>
       <Note header="Jobs Finished" content="Successful" img="success.png" status="S"/>
       <Note header="Jobs Finished" content="Failed" img="failure.png" status="F"/>
